@@ -20,6 +20,7 @@ public class Clientapp {
 
         List<ProductDTO> ProductL = pdao.findProductsBetween(100.00, 700.00);
         System.out.println(ProductL);
+        pdao.delete(ProductL.get(0));
     }
 
     public static void createProduct(ProductDao pdao, String name, Double price, String type) {
@@ -28,5 +29,9 @@ public class Clientapp {
         p1.setPrice(price);
         p1.setType(type);
         pdao.save(p1);
+    }
+    
+    public static void deleteProduct(){
+        
     }
 }

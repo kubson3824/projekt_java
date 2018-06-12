@@ -58,25 +58,17 @@ public class JpaProductDao extends GenericJpaDao<ProductDTO, Long> implements Pr
     }
 
     @Override
-    public void addProduct(String name, Double price, String type) {
-        EntityManager em = getEntityManager();
-        em.getTransaction().begin();
-        TypedQuery<ProductDTO> r = em.createNamedQuery("ProductDTO.addProduct", ProductDTO.class);
-        r.setParameter("name", name);
-        r.setParameter("price", price);
-        r.setParameter("type", type);
-        r.executeUpdate();
-        em.getTransaction().commit();
-    }
-
-    @Override
     public void editProduct(Long id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void deleteProduct(Long id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<ProductDTO> findProduct(String name, String type) {
+        EntityManager em = getEntityManager();
+        TypedQuery<ProductDTO> r = em.createNamedQuery("ProductDTO.findProduct", ProductDTO.class);
+        r.setParameter("name", name);
+        r.setParameter("type", type);
+        return r.getResultList();
     }
 
 }
