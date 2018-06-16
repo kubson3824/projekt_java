@@ -14,5 +14,6 @@ public interface ProductDao extends GenericDao<ProductDTO,Long>  {
     public List<ProductDTO> findProductNoPurchases();
     public List<ProductDTO> findMostBought();
     public void changePrice(Double c);
-    public void editProduct (Long id);
+    public void editProduct (String name, String newname, Long price, String kat);
+    public List<ProductDTO> showAll();
 }

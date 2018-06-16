@@ -16,8 +16,9 @@ import javax.persistence.Table;
 @NamedQuery(name = "ProductDTO.findProductNoPurchases", query = "select c from ProductDTO c where c.id not in(select d.product.id from PurchaseItemDTO d)"),
 @NamedQuery(name = "ProductDTO.findMostBought", query = "select c from ProductDTO c where c.id in(select d.product.id from PurchaseItemDTO d group by d.product.id having SUM(d.quantity)>=ALL(select SUM(e.quantity) from PurchaseItemDTO e group by e.product.id))"),
 @NamedQuery(name = "ProductDTO.changePrice", query = "update ProductDTO d set d.price = d.price*:chprice"),
-@NamedQuery(name = "ProductDTO.findProduct", query = "select c from ProductDTO d where c.name=:name and c.type=:type "),
-
+@NamedQuery(name = "ProductDTO.editProduct", query = "update ProductDTO d set d.price = :chprice, d.name=:chname, d.type=:chtype where d.name=:name"),
+@NamedQuery(name = "ProductDTO.findProduct", query = "select c from ProductDTO c where c.name=:name and c.type=:type"),
+@NamedQuery(name = "ProductDTO.showAll", query = "select c from ProductDTO c")
 })
 @Entity
 @Table(name="PRODUCT", schema="APP")
@@ -52,7 +53,6 @@ public class ProductDTO extends AbstractDTO {
     public void setPrice(Double price) {
         this.price = price;
     }
-    
     
      @Override
     public String toString() {
