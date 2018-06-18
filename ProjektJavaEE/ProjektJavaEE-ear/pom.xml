@@ -47,5 +47,11 @@
             <version>1.0</version>
             <type>ejb</type>
         </dependency>
+        <dependency>
+            <groupId>AKJP</groupId>
+            <artifactId>ProjektJavaEE-web</artifactId>
+            <version>1.0</version>
+            <type>war</type>
+        </dependency>
     </dependencies>
 </project>
