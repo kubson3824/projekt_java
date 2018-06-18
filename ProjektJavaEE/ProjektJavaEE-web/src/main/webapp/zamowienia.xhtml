@@ -7,23 +7,26 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <f:view>
         <h:head>
-
+            <title>Zamówienia</title>
         </h:head>
         <h:body>
             <ui:composition template="index.xhtml">
                 <ui:define name="box">
-                    <h:form>
-                        <table class="itemtab">
-                            <td>hhh</td>
-                            <td>eee</td>
-                            <td>ddd</td>
-                        </table>
-                        <div id="zamowienia2">
-                            <ui:insert name="zamowienia2">
-                                <ui:include src="tablee.xhtml"/>
-                            </ui:insert>
-                        </div>
-                    </h:form>
+                    <table>
+                        <tr>
+                            <th>
+                                Numer zamówienia
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                tu numer
+                            </td>
+                            <td>
+                                <h:commandButton value = "Dodaj!" onclick = "alert('Dodano produkt do koszyka');" /> 
+                            </td>
+                        </tr>
+                    </table>
                 </ui:define>
             </ui:composition>
         </h:body>

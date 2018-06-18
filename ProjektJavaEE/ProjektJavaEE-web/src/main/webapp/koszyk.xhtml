@@ -7,7 +7,7 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <f:view>
         <h:head>
-            <title>Produkty</title>
+            <title>Twój koszyk</title>
         </h:head>
         <h:body>
             <ui:composition template="index.xhtml">
@@ -35,11 +35,12 @@
                                 tu kategoria
                             </td>
                             <td>
-                                <h:commandButton value = "Dodaj!" onclick = "alert('Dodano produkt do koszyka');" /> 
+                                <h:commandButton value = "Usuń!" onclick = "alert('Usunięto produkt z koszyka');" /> 
                             </td>
                         </tr>
                     </table>
                 </ui:define>
+                <h:commandButton value = "Złóż zamówienie!" onclick = "alert('Zamówienie złożone pomyślnie');" /> 
             </ui:composition>
         </h:body>
     </f:view>
