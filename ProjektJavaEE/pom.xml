@@ -9,8 +9,6 @@
   <modules>
     <module>ProjektJavaEE-ear</module>
     <module>ProjektJavaEE-ejb</module>
-    <module>ProjektJavaEE-clientapp</module>
-    <module>ProjektJavaEE-service</module>
     <module>ProjektJavaEE-web</module>
   </modules>
   <properties>
