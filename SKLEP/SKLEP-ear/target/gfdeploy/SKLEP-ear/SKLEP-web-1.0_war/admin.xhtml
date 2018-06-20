@@ -2,47 +2,51 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Panel Administracyjny</title>
     </h:head>
     <h:body>
         <ui:composition template="index.xhtml">
             <ui:define name="box">
-                <h1>Panel Administracyjny</h1><hr/>
-                <table>
-                    <tr>
-                        <th>
-                            Nazwa produktu
-                        </th>
-                        <th>
-                            Cena
-                        </th>
-                        <th>
-                            Kategoria
-                        </th>
-                    </tr>
-                    <ui:repeat var="p" value="#{product.products}">
-                        <tr>
-                            <td>
-                                #{p.nazwa}
-                            </td>
-                            <td>
-                                #{p.cena}
-                            </td>
-                            <td>
-                                #{p.kategoria}
-                            </td>
-                            <td>
-                                <h:commandButton value = "Edytuj produkt" onclick = "alert('Dodano produkt do koszyka');" /> 
-                            </td>
-                            <td>
-                                <h:button outcome="#{product.onRemove(p)}" value="Usun produkt"></h:button>
-                            </td>
-                        </tr>
-                    </ui:repeat>
-                </table>
-                <h:button outcome = "addproduct.xhtml" value="Dodaj produkt" />
+                <h:form id="productForm">
+                    <p:growl id="growl" showDetail="true"  />
+                    <p:dataTable id="productTable" value="#{product.products}" var="p" >
+                        <p:column headerText="Nazwa" >
+                            #{p.nazwa}
+                        </p:column>
+                        <p:column headerText="Kategoria">
+                            #{p.kategoria}
+                        </p:column>
+                        <p:column headerText="Cena">
+                            <h:outputText value="#{p.cena}" >
+                                <f:convertNumber locale="pl-PL" type="currency" currencySymbol="zł"  />
+                            </h:outputText>
+                        </p:column>
+                        <p:column headerText="Usuń">
+                            <p:commandButton icon="ui-icon-trash" title="Usuń" action="#{product.onRemove(p)}" update=":productForm:productTable" />
+                        </p:column>
+                    </p:dataTable>
+                    <p:commandButton value="Dodaj produkt" action="#{product.onProductAdd()}" oncomplete="PF('productDlg').show()" update=":productDlgId" />
+                </h:form>
+                <p:dialog id="productDlgId" widgetVar="productDlg" dynamic="true" modal="true" >
+                    <h:form>
+                        <p:panelGrid columns="2">
+                            <p:outputLabel value="Nazwa" for="nazwaId"/>
+                            <p:inputText id="nazwaId" value="#{product.newProduct.nazwa}" required="true" />
+                            <p:outputLabel value="Kategoria" for="kategoriaId"/>
+                            <p:inputText id="kategoriaId" value="#{product.newProduct.kategoria}" required="true" />
+                            <p:outputLabel value="Cena" for="cenaId" />
+                            <p:inputText id="cenaId" value="#{product.newProduct.cena}"  required="true" >
+                                <f:convertNumber locale="pl-PL" maxFractionDigits="2"  />
+                            </p:inputText>
+                        </p:panelGrid>
+                        <p:commandButton  value="Anuluj" type="button" onclick="PF('productDlg').hide()"  />
+                        <p:commandButton value="Zatwierdź" action="#{product.added()}"  update=":productForm:productTable :productForm:growl" />
+                    </h:form>
+                </p:dialog>
             </ui:define>
         </ui:composition>
     </h:body>

@@ -8,6 +8,7 @@ import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
+import org.primefaces.context.RequestContext;
 
 @ManagedBean(name = "product")
 @SessionScoped
@@ -45,13 +46,17 @@ public class Product implements Serializable{
         this.newProduct = newProduct;
     }   
 
-    public String add() {
+    public void onProductAdd() {
+        newProduct = new ProductDTO();
+    }
+    
+    public String added() {
         dao.save(newProduct);
+        RequestContext.getCurrentInstance().execute("PF('productDlg').hide()");
         return "/admin.xhtml?faces-redirect=true";
     }
     
     public String onRemove(ProductDTO p){
-        System.out.println(p.getId());
         dao.remove(p.getId());
         return "/admin.xhtml?faces-redirect=true";
     }
