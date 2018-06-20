@@ -5,6 +5,8 @@ akjp\dao\ProductDao.class
 akjp\model\KlientDTO.class
 akjp\model\ZamowienieDTO.class
 akjp\dao\jpa\JpaKlientDao.class
+akjp\model\UserGroup.class
+akjp\dao\jpa\AbstractDao.class
 akjp\dao\jpa\JpaProductDao.class
 akjp\util\JpaFactory.class
 akjp\dao\jpa\JpaZamowienieDao.class
