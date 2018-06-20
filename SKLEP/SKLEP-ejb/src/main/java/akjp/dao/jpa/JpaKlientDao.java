@@ -4,6 +4,7 @@ import akjp.dao.KlientDao;
 import akjp.model.KlientDTO;
 import java.util.List;
 import javax.annotation.sql.DataSourceDefinition;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
@@ -20,6 +21,7 @@ import javax.persistence.TypedQuery;
         databaseName = "AKJP",
         properties = {"connectionAttributes=;create=true"}
 )
+@Stateless
 public class JpaKlientDao implements KlientDao {
 
     @PersistenceContext(unitName = "AKJP_ejb_1.0PU")

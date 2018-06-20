@@ -26,6 +26,7 @@
                             </h:outputText>
                         </p:column>
                         <p:column headerText="Akcje" style="color:black">
+                            <p:commandButton style="color:black" value="Edytuj" id="editWithIcon" icon="ui-icon-pencil" title="Edytuj" action="#{product.onProductEdit(p)}" oncomplete="PF('productEditDlg').show()" update=":productEditDlgId" />
                             <p:commandButton style="color:black" value="Usuń" id="withIcon" icon="ui-icon-trash" title="Usuń" action="#{product.onRemove(p)}" update=":productForm:productTable" />
                         </p:column>
                     </p:dataTable>
@@ -45,6 +46,22 @@
                         </p:panelGrid>
                         <p:commandButton style="color:black" value="Anuluj" type="button" onclick="PF('productDlg').hide()"  />
                         <p:commandButton style="color:black" value="Zatwierdź" action="#{product.added()}"  update=":productForm:productTable :productForm:growl" />
+                    </h:form>
+                </p:dialog>
+                <p:dialog id="productEditDlgId" widgetVar="productEditDlg" dynamic="true" modal="true" >
+                    <h:form>
+                        <p:panelGrid columns="2">
+                            <p:outputLabel value="Nazwa" for="nazwaId"/>
+                            <p:inputText id="nazwaId" value="#{product.newProduct.nazwa}" required="true" />
+                            <p:outputLabel value="Kategoria" for="kategoriaId"/>
+                            <p:inputText id="kategoriaId" value="#{product.newProduct.kategoria}" required="true" />
+                            <p:outputLabel value="Cena" for="cenaId" />
+                            <p:inputText id="cenaId" value="#{product.newProduct.cena}"  required="true" >
+                                <f:convertNumber locale="pl-PL" maxFractionDigits="2"  />
+                            </p:inputText>
+                        </p:panelGrid>
+                        <p:commandButton style="color:black" value="Anuluj" type="button" onclick="PF('productEditDlg').hide()"  />
+                        <p:commandButton style="color:black" value="Zatwierdź" action="#{product.edited()}"  update=":productForm:productTable :productForm:growl" />
                     </h:form>
                 </p:dialog>
             </ui:define>
