@@ -1,17 +1,26 @@
 package akjp.model;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
+@NamedQuery(name = "ZamowienieDTO.findAll", query = "select c from ZamowienieDTO c")
 @Table(name="ZAMOWIENIE", schema="APP")
-public class ZamowienieDTO extends AbstractDTO {
+public class ZamowienieDTO implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     @ManyToOne
     private KlientDTO klient;
     @OneToMany(mappedBy = "zamowienie", cascade={CascadeType.PERSIST,CascadeType.REMOVE})
