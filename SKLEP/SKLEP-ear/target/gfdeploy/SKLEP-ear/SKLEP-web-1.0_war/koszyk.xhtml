@@ -4,45 +4,36 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
-    <f:view>
-        <h:head>
-            <title>Twój koszyk</title>
-        </h:head>
-        <h:body>
-            <ui:composition template="index.xhtml">
-                <ui:define name="box">
-                    <table>
-                        <tr>
-                            <th>
-                                Nazwa produktu
-                            </th>
-                            <th>
-                                Cena
-                            </th>
-                            <th>
-                                Kategoria
-                            </th>
-                        </tr>
-                        <tr>
-                            <td>
-                                tu nazwa
-                            </td>
-                            <td>
-                                tu cena
-                            </td>
-                            <td>
-                                tu kategoria
-                            </td>
-                            <td>
-                                <h:commandButton value = "Usuń!" onclick = "alert('Usunięto produkt z koszyka');" /> 
-                            </td>
-                        </tr>
-                    </table>
-                </ui:define>
-                <h:commandButton value = "Złóż zamówienie!" onclick = "alert('Zamówienie złożone pomyślnie');" /> 
-            </ui:composition>
-        </h:body>
-    </f:view>
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Twój koszyk</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="index.xhtml">
+            <ui:define name="box">
+                <h:form id="koszykForm">
+                    <p:growl id="growl" showDetail="true"/>
+                    <p:dataTable id="koszykTable" value="#{product.products}" var="p">
+                        <p:column headerText="Nazwa" style="color:black">
+                            #{p.nazwa}
+                        </p:column>
+                        <p:column headerText="Kategoria" style="color:black">
+                            #{p.kategoria}
+                        </p:column>
+                        <p:column headerText="Cena" style="color:black">
+                            <h:outputText value="#{p.cena}" >
+                                <f:convertNumber locale="pl-PL" type="currency" currencySymbol="zł"  />
+                            </h:outputText>
+                        </p:column>
+                        <p:column headerText="Akcje" style="color:black">
+                            <p:commandButton style="color:black" value="Usuń" id="withIcon" icon="ui-icon-trash" title="Usuń" action="#{product.onRemove(p)}" update="koszykForm:koszykTable" />
+                        </p:column>
+                    </p:dataTable>
+                </h:form>
+            </ui:define>
+            <h:commandButton value = "Złóż zamówienie!" onclick = "alert('Zamówienie złożone pomyślnie');" /> 
+        </ui:composition>
+    </h:body>
 </html>
 

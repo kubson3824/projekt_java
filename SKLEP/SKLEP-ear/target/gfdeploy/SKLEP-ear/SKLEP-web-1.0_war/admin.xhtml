@@ -12,24 +12,24 @@
         <ui:composition template="index.xhtml">
             <ui:define name="box">
                 <h:form id="productForm">
-                    <p:growl id="growl" showDetail="true"  />
-                    <p:dataTable id="productTable" value="#{product.products}" var="p" >
-                        <p:column headerText="Nazwa" >
+                    <p:growl id="growl" showDetail="true"/>
+                    <p:dataTable id="productTable" value="#{product.products}" var="p">
+                        <p:column headerText="Nazwa" style="color:black">
                             #{p.nazwa}
                         </p:column>
-                        <p:column headerText="Kategoria">
+                        <p:column headerText="Kategoria" style="color:black">
                             #{p.kategoria}
                         </p:column>
-                        <p:column headerText="Cena">
+                        <p:column headerText="Cena" style="color:black">
                             <h:outputText value="#{p.cena}" >
                                 <f:convertNumber locale="pl-PL" type="currency" currencySymbol="zł"  />
                             </h:outputText>
                         </p:column>
-                        <p:column headerText="Usuń">
-                            <p:commandButton icon="ui-icon-trash" title="Usuń" action="#{product.onRemove(p)}" update=":productForm:productTable" />
+                        <p:column headerText="Akcje" style="color:black">
+                            <p:commandButton style="color:black" value="Usuń" id="withIcon" icon="ui-icon-trash" title="Usuń" action="#{product.onRemove(p)}" update=":productForm:productTable" />
                         </p:column>
                     </p:dataTable>
-                    <p:commandButton value="Dodaj produkt" action="#{product.onProductAdd()}" oncomplete="PF('productDlg').show()" update=":productDlgId" />
+                    <p:commandButton style="color:black" value="Dodaj produkt" action="#{product.onProductAdd()}" oncomplete="PF('productDlg').show()" update=":productDlgId" />
                 </h:form>
                 <p:dialog id="productDlgId" widgetVar="productDlg" dynamic="true" modal="true" >
                     <h:form>
@@ -43,8 +43,8 @@
                                 <f:convertNumber locale="pl-PL" maxFractionDigits="2"  />
                             </p:inputText>
                         </p:panelGrid>
-                        <p:commandButton  value="Anuluj" type="button" onclick="PF('productDlg').hide()"  />
-                        <p:commandButton value="Zatwierdź" action="#{product.added()}"  update=":productForm:productTable :productForm:growl" />
+                        <p:commandButton style="color:black" value="Anuluj" type="button" onclick="PF('productDlg').hide()"  />
+                        <p:commandButton style="color:black" value="Zatwierdź" action="#{product.added()}"  update=":productForm:productTable :productForm:growl" />
                     </h:form>
                 </p:dialog>
             </ui:define>
