@@ -16,17 +16,17 @@
                     <h:form id="zamowienieForm">
                         <p:growl id="growl" showDetail="true"  />
                         <p:dataTable id="zamowienieTable" value="#{zamowienie.zamowienies}" var="z" >
-                            <p:column headerText="Nazwa" >
+                            <p:column style="color:black" headerText="Nazwa" >
                                 #{z.klient}
                             </p:column>
-                            <p:column headerText="Data Zamówienia">
+                            <p:column style="color:black" headerText="Data Zamówienia">
                                 #{z.dataZamowienia}
                             </p:column>
-                            <p:column headerText="Usuń">
+                            <p:column style="color:black" headerText="Usuń">
                                 <p:commandButton icon="ui-icon-trash" title="Usuń" action="#{zamowienie.onRemove(z)}" update=":zamowienieForm:zamowienieTable" />
                             </p:column>
                         </p:dataTable>
-                        <p:commandButton value="Dodaj produkt" action="#{zamowienie.onZamowienieAdd()}" oncomplete="PF('zamowienieDlg').show()" update=":zamowienieDlgId" />
+                        <p:commandButton style="color:black" value="Dodaj produkt" action="#{zamowienie.onZamowienieAdd()}" oncomplete="PF('zamowienieDlg').show()" update=":zamowienieDlgId" />
                     </h:form>
                     <p:dialog id="zamowienieDlgId" widgetVar="zamowienieDlg" dynamic="true" modal="true" >
                         <h:form>
@@ -34,8 +34,8 @@
                                 <p:outputLabel value="Numer" for="nazwaId"/>
                                 <p:inputText id="nazwaId" value="#{zamowienie.newZamowienie.id}" required="true" />
                             </p:panelGrid>
-                            <p:commandButton  value="Anuluj" type="button" onclick="PF('zamowienieDlg').hide()"  />
-                            <p:commandButton value="Zatwierdź" action="#{zamowienie.added()}"  update=":zamowienieForm:zamowienieTable :zamowienieForm:growl" />
+                            <p:commandButton style="color:black" value="Anuluj" type="button" onclick="PF('zamowienieDlg').hide()"  />
+                            <p:commandButton style="color:black" value="Zatwierdź" action="#{zamowienie.added()}"  update=":zamowienieForm:zamowienieTable :zamowienieForm:growl" />
                         </h:form>
                     </p:dialog>
                 </ui:define>

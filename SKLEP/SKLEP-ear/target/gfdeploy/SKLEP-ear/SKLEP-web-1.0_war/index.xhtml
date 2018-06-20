@@ -4,7 +4,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
     <f:view>
         <h:head>
             <style>
@@ -49,7 +50,10 @@
                 <li><h:link value = "Strona główna" outcome = "home" /></li>
                 <li><h:link value = "Zamówienia" outcome = "zamowienia" /></li>
                 <li><h:link value = "Produkty" outcome = "products" /></li>
-                <li style="float: right;"><h:link value = "Zaloguj" outcome = "login" /></li>
+                <p:outputPanel rendered="#{!klient.logged}"><li style="float: right;"><h:link value = "Zaloguj" outcome = "login" /></li></p:outputPanel>
+                <p:outputPanel rendered="#{klient.logged}">
+                    <h:form><li style="float: right;"><h:commandLink value = "Wyloguj" action="#{login.logout()}" /></li></h:form>
+                </p:outputPanel>
                 <li style="float: right;"><h:link value = "Zarejestruj" outcome = "register" /></li>
                 <li style="float: right;"><h:link value = "Panel administracyjny" outcome = "admin" /></li>
                 <li style="float: right;"><h:link value = "Mój koszyk" outcome = "koszyk" /></li>

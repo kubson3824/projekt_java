@@ -16,16 +16,19 @@
                     <h:form id="productForm">
                         <p:growl id="growl" showDetail="true"  />
                         <p:dataTable id="productTable" value="#{product.products}" var="p" >
-                            <p:column headerText="Nazwa" >
+                            <p:column style="color:black" headerText="Nazwa" >
                                 #{p.nazwa}
                             </p:column>
-                            <p:column headerText="Kategoria">
+                            <p:column style="color:black" headerText="Kategoria">
                                 #{p.kategoria}
                             </p:column>
-                            <p:column headerText="Cena">
+                            <p:column style="color:black" headerText="Cena">
                                 <h:outputText value="#{p.cena}" >
                                     <f:convertNumber locale="pl-PL" type="currency" currencySymbol="zł"  />
                                 </h:outputText>
+                            </p:column>
+                            <p:column style="color:black" headerText="Usuń">
+                                <p:commandButton title="Dodaj do koszyka" action="#" update=":productForm:productTable" />
                             </p:column>
                         </p:dataTable>
                     </h:form>

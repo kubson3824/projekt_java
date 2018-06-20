@@ -1,1 +1,10 @@
+<<<<<<< HEAD
 webaccess\Zamowienie.class
+=======
+webaccess\Login.class
+webaccess\Zamowienie.class
+web\util\JSF.class
+webaccess\Product.class
+webaccess\Klient.class
+web\filter\AuthFilter.class
+>>>>>>> master
