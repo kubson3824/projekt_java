@@ -16,23 +16,40 @@ import javax.persistence.Table;
 
 @Entity
 @NamedQuery(name = "ZamowienieDTO.findAll", query = "select c from ZamowienieDTO c")
-@Table(name="ZAMOWIENIE", schema="APP")
+@Table(name = "ZAMOWIENIE", schema = "APP")
 public class ZamowienieDTO implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @ManyToOne
     private KlientDTO klient;
-    @OneToMany(mappedBy = "zamowienie", cascade={CascadeType.PERSIST,CascadeType.REMOVE})
+    @OneToMany(mappedBy = "zamowienie", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     private List<PurchaseItemDTO> purchaseItems = new LinkedList<PurchaseItemDTO>();
     private Date data_zamowienia;
 
-    public KlientDTO getCustomer() {
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public KlientDTO getKlient() {
         return klient;
     }
 
-    public void setCustomer(KlientDTO klient) {
+    public void setKlient(KlientDTO klient) {
         this.klient = klient;
+    }
+
+    public Date getData_zamowienia() {
+        return data_zamowienia;
+    }
+
+    public void setData_zamowienia(Date data_zamowienia) {
+        this.data_zamowienia = data_zamowienia;
     }
 
     public void addPurchaseItem(PurchaseItemDTO pi) {
@@ -44,11 +61,12 @@ public class ZamowienieDTO implements Serializable {
         return purchaseItems;
     }
 
-    public Date getDataZamowienia(){
+    public Date getDataZamowienia() {
         return data_zamowienia;
     }
-    public void setDataZamowienia(Date data_zamowienia){
+
+    public void setDataZamowienia(Date data_zamowienia) {
         this.data_zamowienia = data_zamowienia;
     }
-    
+
 }
