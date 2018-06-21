@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-E:\Studia\Projekty\java\projekt_java\SKLEP\SKLEP-ejb\src\main\java\akjp\dao\ProductDao.java
-E:\Studia\Projekty\java\projekt_java\SKLEP\SKLEP-ejb\src\main\java\akjp\dao\KlientDao.java
-E:\Studia\Projekty\java\projekt_java\SKLEP\SKLEP-ejb\src\main\java\akjp\model\PurchaseItemDTO.java
-E:\Studia\Projekty\java\projekt_java\SKLEP\SKLEP-ejb\src\main\java\akjp\model\ZamowienieDTO.java
-E:\Studia\Projekty\java\projekt_java\SKLEP\SKLEP-ejb\src\main\java\akjp\util\JpaFactory.java
-E:\Studia\Projekty\java\projekt_java\SKLEP\SKLEP-ejb\src\main\java\akjp\dao\jpa\JpaZamowienieDao.java
-E:\Studia\Projekty\java\projekt_java\SKLEP\SKLEP-ejb\src\main\java\akjp\NewSessionBean.java
-E:\Studia\Projekty\java\projekt_java\SKLEP\SKLEP-ejb\src\main\java\akjp\model\ProductDTO.java
-E:\Studia\Projekty\java\projekt_java\SKLEP\SKLEP-ejb\src\main\java\akjp\dao\jpa\JpaKlientDao.java
-E:\Studia\Projekty\java\projekt_java\SKLEP\SKLEP-ejb\src\main\java\akjp\dao\jpa\JpaProductDao.java
-E:\Studia\Projekty\java\projekt_java\SKLEP\SKLEP-ejb\src\main\java\akjp\dao\ZamowienieDao.java
-E:\Studia\Projekty\java\projekt_java\SKLEP\SKLEP-ejb\src\main\java\akjp\model\KlientDTO.java
-=======
 C:\Users\Acerek\Documents\projekt_java\SKLEP\SKLEP-ejb\src\main\java\akjp\NewSessionBean.java
 C:\Users\Acerek\Documents\projekt_java\SKLEP\SKLEP-ejb\src\main\java\akjp\model\ZamowienieDTO.java
 C:\Users\Acerek\Documents\projekt_java\SKLEP\SKLEP-ejb\src\main\java\akjp\util\JpaFactory.java
@@ -26,4 +12,3 @@ C:\Users\Acerek\Documents\projekt_java\SKLEP\SKLEP-ejb\src\main\java\akjp\dao\Pr
 C:\Users\Acerek\Documents\projekt_java\SKLEP\SKLEP-ejb\src\main\java\akjp\model\UserGroup.java
 C:\Users\Acerek\Documents\projekt_java\SKLEP\SKLEP-ejb\src\main\java\akjp\dao\jpa\AbstractDao.java
 C:\Users\Acerek\Documents\projekt_java\SKLEP\SKLEP-ejb\src\main\java\akjp\dao\jpa\JpaZamowienieDao.java
->>>>>>> master

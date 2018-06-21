@@ -16,15 +16,17 @@
                     <h:form>
                         <p:panelGrid columns="2">
                             <p:outputLabel value="Username" for="userId"/>
-                            <p:inputText id="userId" value="#{user2.username}" required="true" />
+                            <p:inputText id="userId" value="#{login.newKlient.username}" required="true" />
                             <p:outputLabel value="Email" for="emailId"/>
-                            <p:inputText id="emailId" value="#{user2.email}" required="true" />
+                            <p:inputText id="emailId" value="#{login.newKlient.email}" required="true" />
                             <p:outputLabel value="Password" for="passId"/>
-                            <p:password id="passId" value="#{login2.password}" feedback="true"/>
+                            <p:password id="passId" value="#{login.newKlient.password}" feedback="true"/>
                             <p:outputLabel value="Repeat Password" for="passRepId"/>
-                            <p:password id="passRepId" value="#{login2.passwordRep}"/>
+                            <p:password id="passRepId" value="#{login.password}"/>
                         </p:panelGrid>
-                        <p:commandButton style="color:black" value="Zatwierdź" action="#{login2.login()}"/>
+                        <p:commandButton style="color:black" value="Zatwierdź" action="#{login.added()}">
+                            <f:actionListener binding="#{login.login()}" />
+                        </p:commandButton>
                     </h:form>
                 </ui:define>
             </ui:composition>

@@ -1,15 +1,7 @@
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-E:\Studia\Projekty\java\projekt_java\SKLEP\SKLEP-web\src\main\java\webaccess\Koszyk.java
->>>>>>> Stashed changes
-E:\Studia\Projekty\java\projekt_java\SKLEP\SKLEP-web\src\main\java\webaccess\Zamowienie.java
-E:\Studia\Projekty\java\projekt_java\SKLEP\SKLEP-web\src\main\java\webaccess\Product.java
-=======
 C:\Users\Acerek\Documents\projekt_java\SKLEP\SKLEP-web\src\main\java\webaccess\Product.java
 C:\Users\Acerek\Documents\projekt_java\SKLEP\SKLEP-web\src\main\java\webaccess\Klient.java
 C:\Users\Acerek\Documents\projekt_java\SKLEP\SKLEP-web\src\main\java\web\util\JSF.java
+C:\Users\Acerek\Documents\projekt_java\SKLEP\SKLEP-web\src\main\java\webaccess\Koszyk.java
 C:\Users\Acerek\Documents\projekt_java\SKLEP\SKLEP-web\src\main\java\webaccess\Zamowienie.java
 C:\Users\Acerek\Documents\projekt_java\SKLEP\SKLEP-web\src\main\java\webaccess\Login.java
 C:\Users\Acerek\Documents\projekt_java\SKLEP\SKLEP-web\src\main\java\web\filter\AuthFilter.java
->>>>>>> master
