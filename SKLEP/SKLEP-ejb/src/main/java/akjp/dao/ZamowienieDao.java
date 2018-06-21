@@ -1,6 +1,7 @@
 package akjp.dao;
 
 import akjp.model.ZamowienieDTO;
+import akjp.model.KlientDTO;
 import java.util.List;
 
 public interface ZamowienieDao {
@@ -12,4 +13,6 @@ public interface ZamowienieDao {
     public void remove(Long id);
 
     public List<ZamowienieDTO> findAll();
+    
+    public List<ZamowienieDTO> findByUser(KlientDTO k);
 }

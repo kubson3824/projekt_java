@@ -14,7 +14,7 @@
             <ui:define name="box">
                 <h:form id="koszykForm">
                     <p:growl id="growl" showDetail="true"/>
-                    <p:dataTable id="koszykTable" value="#{product.products}" var="p">
+                    <p:dataTable id="koszykTable" value="#{koszyk.zamowienies}" var="p">
                         <p:column headerText="Nazwa" style="color:black">
                             #{p.nazwa}
                         </p:column>

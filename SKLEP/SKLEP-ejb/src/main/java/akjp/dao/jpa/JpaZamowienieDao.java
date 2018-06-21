@@ -1,6 +1,7 @@
 package akjp.dao.jpa;
 
 import akjp.dao.ZamowienieDao;
+import akjp.model.KlientDTO;
 import akjp.model.ZamowienieDTO;
 import java.util.List;
 import javax.annotation.sql.DataSourceDefinition;
@@ -45,6 +46,12 @@ public class JpaZamowienieDao implements ZamowienieDao {
     @Override
     public List<ZamowienieDTO> findAll() {
         TypedQuery<ZamowienieDTO> q = em.createNamedQuery("ZamowienieDTO.findAll", ZamowienieDTO.class);
+        return q.getResultList();
+    }
+
+    @Override
+    public List<ZamowienieDTO> findByUser(KlientDTO k) {
+        TypedQuery<ZamowienieDTO> q = em.createNamedQuery("ZamowienieDTO.findByUser", ZamowienieDTO.class);
         return q.getResultList();
     }
 }

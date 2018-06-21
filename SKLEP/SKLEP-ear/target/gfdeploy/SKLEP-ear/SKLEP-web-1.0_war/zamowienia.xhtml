@@ -16,6 +16,7 @@
                     <h:form id="zamowienieForm">
                         <p:growl id="growl" showDetail="true"  />
                         <p:dataTable id="zamowienieTable" value="#{zamowienie.zamowienies}" var="z" >
+<<<<<<< Updated upstream
                             <p:column style="color:black" headerText="Nazwa" >
                                 #{z.klient}
                             </p:column>
@@ -38,6 +39,26 @@
                             <p:commandButton style="color:black" value="Zatwierdź" action="#{zamowienie.added()}"  update=":zamowienieForm:zamowienieTable :zamowienieForm:growl" />
                         </h:form>
                     </p:dialog>
+=======
+                            <p:column headerText="Data Zamówienia">
+                                #{z.dataZamowienia}
+                            </p:column>
+                            <p:column headerText="Produkty">
+                                <p:dataTable value="#{z.purchaseItems}" var="pi">
+                                    <p:column headerText="Nazwa">
+                                        #{pi.product.nazwa}
+                                    </p:column>
+                                    <p:column headerText="Ilosc">
+                                        #{pi.ilosc}
+                                    </p:column>
+                                </p:dataTable>
+                            </p:column>
+                            <p:column headerText="Usuń">
+                                <p:commandButton icon="ui-icon-trash" title="Usuń" action="#{zamowienie.onRemove(z)}" update=":zamowienieForm:zamowienieTable" />
+                            </p:column>
+                        </p:dataTable>
+                    </h:form>
+>>>>>>> Stashed changes
                 </ui:define>
             </ui:composition>
         </h:body>

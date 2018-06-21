@@ -10,12 +10,16 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@NamedQuery(name = "ZamowienieDTO.findAll", query = "select c from ZamowienieDTO c")
+@NamedQueries({
+@NamedQuery(name = "ZamowienieDTO.findAll", query = "select c from ZamowienieDTO c"),
+@NamedQuery(name = "ZamowienieDTO.findByUser", query = "select c from ZamowienieDTO c where c.klient=:klient"),
+})
 @Table(name = "ZAMOWIENIE", schema = "APP")
 public class ZamowienieDTO implements Serializable {
 
@@ -42,14 +46,6 @@ public class ZamowienieDTO implements Serializable {
 
     public void setKlient(KlientDTO klient) {
         this.klient = klient;
-    }
-
-    public Date getData_zamowienia() {
-        return data_zamowienia;
-    }
-
-    public void setData_zamowienia(Date data_zamowienia) {
-        this.data_zamowienia = data_zamowienia;
     }
 
     public void addPurchaseItem(PurchaseItemDTO pi) {
