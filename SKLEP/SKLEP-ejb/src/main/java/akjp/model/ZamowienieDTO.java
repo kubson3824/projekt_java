@@ -17,8 +17,10 @@ import javax.persistence.Table;
 
 @Entity
 @NamedQueries({
+@NamedQuery(name = "ZamowienieDTO.findById", query = "select c from ZamowienieDTO c where c.klient.id=:un"),
 @NamedQuery(name = "ZamowienieDTO.findAll", query = "select c from ZamowienieDTO c"),
 @NamedQuery(name = "ZamowienieDTO.findByUser", query = "select c from ZamowienieDTO c where c.klient=:klient"),
+@NamedQuery(name = "ZamowienieDTO.findByUsername", query = "select c from ZamowienieDTO c where c.klient.username=:un"),
 })
 @Table(name = "ZAMOWIENIE", schema = "APP")
 public class ZamowienieDTO implements Serializable {

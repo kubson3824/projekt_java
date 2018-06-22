@@ -15,4 +15,6 @@ public interface ZamowienieDao {
     public List<ZamowienieDTO> findAll();
     
     public List<ZamowienieDTO> findByUser(KlientDTO k);
+    
+    public List<ZamowienieDTO> findByUsername(String username);
 }

@@ -54,4 +54,11 @@ public class JpaZamowienieDao implements ZamowienieDao {
         TypedQuery<ZamowienieDTO> q = em.createNamedQuery("ZamowienieDTO.findByUser", ZamowienieDTO.class);
         return q.getResultList();
     }
+    
+    @Override
+    public List<ZamowienieDTO> findByUsername(String username) {
+        return em.createNamedQuery("ZamowienieDTO.findByUsername", ZamowienieDTO.class)
+                .setParameter("un", username)
+                .getResultList();
+    }
 }

@@ -27,8 +27,13 @@
                                     <f:convertNumber locale="pl-PL" type="currency" currencySymbol="zł"  />
                                 </h:outputText>
                             </p:column>
-                            <p:column style="color:black" headerText="Usuń">
-                                <p:commandButton title="Dodaj do koszyka" action="#" update=":productForm:productTable" />
+                            <p:column style="color:black" headerText="Dodaj do koszyka">
+                                <p:commandButton title="Dodaj do koszyka" action="#{zamowienie.onPurchaeseItemAdd()}">
+                                    <f:actionListener binding="#{zamowienie.newPid.setProduct(p)}" />
+                                    <f:actionListener binding="#{zamowienie.newPid.setZamowienie(zamowienie.setNewZamowienie(newZamowienie))}" />
+                                    <f:actionListener binding="#{zamowienie.newPid.setIlosc(1)}" />
+                                    <f:actionListener binding="#{zamowienie.added2()}}" />
+                                </p:commandButton>
                             </p:column>
                         </p:dataTable>
                     </h:form>

@@ -21,8 +21,6 @@
                             <p:inputText id="emailId" value="#{login.newKlient.email}" required="true" />
                             <p:outputLabel value="Password" for="passId"/>
                             <p:password id="passId" value="#{login.newKlient.password}" feedback="true"/>
-                            <p:outputLabel value="Repeat Password" for="passRepId"/>
-                            <p:password id="passRepId" value="#{login.password}"/>
                         </p:panelGrid>
                         <p:commandButton style="color:black" value="Zatwierdź" action="#{login.added()}">
                             <f:actionListener binding="#{login.login()}" />

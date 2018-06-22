@@ -14,20 +14,18 @@
             <ui:define name="box">
                 <h:form id="koszykForm">
                     <p:growl id="growl" showDetail="true"/>
-                    <p:dataTable id="koszykTable" value="#{koszyk.zamowienies}" var="p">
-                        <p:column headerText="Nazwa" style="color:black">
-                            #{p.nazwa}
-                        </p:column>
-                        <p:column headerText="Kategoria" style="color:black">
-                            #{p.kategoria}
-                        </p:column>
-                        <p:column headerText="Cena" style="color:black">
-                            <h:outputText value="#{p.cena}" >
-                                <f:convertNumber locale="pl-PL" type="currency" currencySymbol="zł"  />
-                            </h:outputText>
-                        </p:column>
-                        <p:column headerText="Akcje" style="color:black">
-                            <p:commandButton style="color:black" value="Usuń" id="withIcon" icon="ui-icon-trash" title="Usuń" action="#{product.onRemove(p)}" update="koszykForm:koszykTable" />
+                    <p:dataTable  value="#{koszyk.getZamowienies(klient.username)}" id="koszykTable" var="p">
+                        <p:column headerText="Produkt">
+                            <p:column headerText="Produkty">
+                                <p:dataTable value="#{p.purchaseItems}" var="pi">
+                                    <p:column headerText="Nazwa">
+                                        #{pi.product.nazwa}
+                                    </p:column>
+                                    <p:column headerText="Ilosc">
+                                        #{pi.ilosc}
+                                    </p:column>
+                                </p:dataTable>
+                            </p:column>
                         </p:column>
                     </p:dataTable>
                 </h:form>

@@ -20,6 +20,8 @@ import javax.persistence.Table;
             @NamedQuery(name = "KlientDTO.findByUsernameAndPassword", query = "select uc from KlientDTO uc where uc.username=:un and uc.password=:pw")
             ,
         @NamedQuery(name = "KlientDTO.findAll", query = "select c from KlientDTO c")
+            ,
+        @NamedQuery(name = "KlientDTO.findByUsername", query = "select uc from KlientDTO uc where uc.username=:un")
         }
 )
 @Table(name = "KLIENT", schema = "APP")

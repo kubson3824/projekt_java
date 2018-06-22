@@ -1,3 +1,4 @@
+C:\Users\Acerek\Documents\projekt_java\SKLEP\SKLEP-ejb\src\main\java\akjp\dao\PurchaseItemDao.java
 C:\Users\Acerek\Documents\projekt_java\SKLEP\SKLEP-ejb\src\main\java\akjp\NewSessionBean.java
 C:\Users\Acerek\Documents\projekt_java\SKLEP\SKLEP-ejb\src\main\java\akjp\model\ZamowienieDTO.java
 C:\Users\Acerek\Documents\projekt_java\SKLEP\SKLEP-ejb\src\main\java\akjp\util\JpaFactory.java
@@ -7,6 +8,7 @@ C:\Users\Acerek\Documents\projekt_java\SKLEP\SKLEP-ejb\src\main\java\akjp\model\
 C:\Users\Acerek\Documents\projekt_java\SKLEP\SKLEP-ejb\src\main\java\akjp\dao\jpa\JpaProductDao.java
 C:\Users\Acerek\Documents\projekt_java\SKLEP\SKLEP-ejb\src\main\java\akjp\model\PurchaseItemDTO.java
 C:\Users\Acerek\Documents\projekt_java\SKLEP\SKLEP-ejb\src\main\java\akjp\dao\ZamowienieDao.java
+C:\Users\Acerek\Documents\projekt_java\SKLEP\SKLEP-ejb\src\main\java\akjp\dao\jpa\JpaPurchaseItemDao.java
 C:\Users\Acerek\Documents\projekt_java\SKLEP\SKLEP-ejb\src\main\java\akjp\dao\jpa\JpaKlientDao.java
 C:\Users\Acerek\Documents\projekt_java\SKLEP\SKLEP-ejb\src\main\java\akjp\dao\ProductDao.java
 C:\Users\Acerek\Documents\projekt_java\SKLEP\SKLEP-ejb\src\main\java\akjp\model\UserGroup.java

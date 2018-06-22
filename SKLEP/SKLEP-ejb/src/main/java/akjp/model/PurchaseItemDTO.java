@@ -20,6 +20,14 @@ public class PurchaseItemDTO implements Serializable {
     private ZamowienieDTO zamowienie;
     private Integer ilosc;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public ProductDTO getProduct() {
         return product;
     }

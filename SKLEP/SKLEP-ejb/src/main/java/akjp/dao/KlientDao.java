@@ -12,4 +12,6 @@ public interface KlientDao {
     public void remove(Long id);
 
     public List<KlientDTO> findAll();
+    
+    public KlientDTO findByUsername(String username);
 }

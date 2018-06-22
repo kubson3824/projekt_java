@@ -42,7 +42,7 @@
                     border: 1px solid #ddd;
                     padding: 8px;
                 }
-                
+
             </style>
         </h:head>
         <h:body>
@@ -50,13 +50,19 @@
                 <li><h:link value = "Strona główna" outcome = "home" /></li>
                 <li><h:link value = "Zamówienia" outcome = "zamowienia" /></li>
                 <li><h:link value = "Produkty" outcome = "products" /></li>
-                <p:outputPanel rendered="#{!klient.logged}"><li style="float: right;"><h:link value = "Zaloguj" outcome = "login" /></li></p:outputPanel>
+                <p:outputPanel rendered="#{!klient.logged}">
+                    <li style="float: right;"><h:link value = "Zaloguj" outcome = "login" /></li>
+                </p:outputPanel>
                 <p:outputPanel rendered="#{klient.logged}">
                     <h:form><li style="float: right;"><h:commandLink value = "Wyloguj" action="#{login.logout()}" /></li></h:form>
                 </p:outputPanel>
                 <li style="float: right;"><h:link value = "Zarejestruj" outcome = "register" /></li>
-                <li style="float: right;"><h:link value = "Panel administracyjny" outcome = "admin" /></li>
-                <li style="float: right;"><h:link value = "Mój koszyk" outcome = "koszyk" /></li>
+                <p:outputPanel rendered="#{klient.logged}">
+                    <li style="float: right;"><h:link value = "Panel administracyjny" outcome = "admin" /></li>
+                </p:outputPanel>
+                <p:outputPanel rendered="#{klient.logged}">
+                    <li style="float: right;"><h:link value = "Mój koszyk" outcome = "koszyk" /></li>
+                </p:outputPanel>
             </ul>
             <div style="padding-top: 150px;">
                 <ui:insert name="box">

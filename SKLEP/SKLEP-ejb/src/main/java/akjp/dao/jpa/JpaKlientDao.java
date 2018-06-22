@@ -16,4 +16,9 @@ public class JpaKlientDao extends AbstractDao<KlientDTO,Long>{
                 .setParameter("pw", password)
                 .getResultList().stream().findFirst().orElse(null);
     }
+    public KlientDTO findByUsername(String username) {
+        return em.createNamedQuery("KlientDTO.findByUsername", KlientDTO.class)
+                .setParameter("un", username)
+                .getResultList().stream().findFirst().orElse(null);
+    }
 }
